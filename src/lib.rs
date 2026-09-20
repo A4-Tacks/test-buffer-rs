@@ -1,5 +1,13 @@
 #![doc = include_str!("../README.md")]
 
+#[cfg(feature = "expect-test")]
+pub mod test_utils {
+    pub use expect_test::{
+        expect,
+        expect_file,
+    };
+}
+
 /// Buffer used for testing, output buffer name and content during panic
 #[derive(Clone, Default, Debug)]
 pub struct TestBuffer {
